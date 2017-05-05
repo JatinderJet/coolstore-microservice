@@ -3,18 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.redhat.coolstore</groupId>
-	<artifactId>inventory</artifactId>
+	<artifactId>inventory-xml</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>inventory</name>
-	
+
 	<properties>
 		<version.wildfly.swarm>2017.5.0</version.wildfly.swarm>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
 		<project.encoding>UTF-8</project.encoding>
-		<version.postgresql>42.0.0</version.postgresql> <!--  also works on 9.4.1207 version, taken from examples -->
+		<version.postgresql>42.0.0</version.postgresql> <!-- also works on 9.4.1207 version, taken from examples -->
 	</properties>
 
 	<dependencyManagement>
@@ -30,7 +30,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>my-inventory-service-config-xml</finalName>
+		<finalName>inventory-service-config-xml</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -48,7 +48,7 @@
 				<configuration>
 					<arguments>
 						<argument>-c</argument>
-						<argument>./standalone_org.xml</argument>
+						<argument>standalone.xml</argument>
 					</arguments>
 				</configuration>
 				<executions>
@@ -101,7 +101,7 @@
 			<artifactId>postgresql</artifactId>
 			<version>${version.postgresql}</version>
 		</dependency>
-		
+
 		<!-- WildFly Swarm Fractions -->
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
