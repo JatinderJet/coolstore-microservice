@@ -19,3 +19,9 @@ Two Approaches can be taken to transform to new tech stack
   - `java -jar target/inventory-service-config-api-swarm.jar`
 
 #### URL http://localhost:8080/api/availability/{itemID}, http://localhost:8080/api/swagger.json
+
+Observations 
+
+standalone.xml approach works only when file name is standalone.xml and is in base folder of inventory service or is in src/main/resources 
+You need not explicitly define, automatically picked, indicates somewhere hard-coded in lib. 
+Yet to see lib source code 

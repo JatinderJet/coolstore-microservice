@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+
+<server xmlns="urn:jboss:domain:4.0">
+
+	<profile>
+		<subsystem xmlns="urn:jboss:domain:datasources:4.0">
+			<datasources>
+				<xa-datasource jndi-name="java:jboss/datasources/InventoryDS"
+					pool-name="inventory_postgresql-DB" use-java-context="true"
+					enabled="true">
+					<xa-datasource-property name="ServerName">${db.server}
+					</xa-datasource-property>
+					<xa-datasource-property name="PortNumber">${db.port}
+					</xa-datasource-property>
+					<xa-datasource-property name="DatabaseName">${db.name}
+					</xa-datasource-property>
+					<driver>postgres</driver>
+					<security>
+						<user-name>${db.username}</user-name>
+						<password>${db.password}</password>
+					</security>
+					<validation>
+						<validate-on-match>true</validate-on-match>
+						<valid-connection-checker
+							class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"></valid-connection-checker>
+						<exception-sorter
+							class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"></exception-sorter>
+					</validation>
+				</xa-datasource>
+				<drivers>
+					<driver name="postgres" module="${db.driver.module}">
+						<!--driver-class>org.postgresql.Driver</driver-class -->
+						<xa-datasource-class>${db.driver.datasourceClass}</xa-datasource-class>
+					</driver>
+				</drivers>
+			</datasources>
+		</subsystem>
+
+	</profile>
+</server>

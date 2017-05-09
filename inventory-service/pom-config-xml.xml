@@ -29,8 +29,19 @@
 		</dependencies>
 	</dependencyManagement>
 
+
 	<build>
 		<finalName>inventory-service-config-xml</finalName>
+		<filters>
+			<filter>src/main/filters/postgresql.properties</filter>
+		</filters>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -46,10 +57,6 @@
 				<artifactId>wildfly-swarm-plugin</artifactId>
 				<version>${version.wildfly.swarm}</version>
 				<configuration>
-					<arguments>
-						<argument>-c</argument>
-						<argument>standalone.xml</argument>
-					</arguments>
 				</configuration>
 				<executions>
 					<execution>
