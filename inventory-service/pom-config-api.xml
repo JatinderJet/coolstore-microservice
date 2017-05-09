@@ -30,13 +30,14 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>inventory-service-config-api</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
 		</resources>
-		<finalName>inventory-service-config-api</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -60,6 +61,10 @@
 				<version>${version.wildfly.swarm}</version>
 				<configuration>
 					<mainClass>com.redhat.coolstore.datasources.Main</mainClass>
+					<propertiesFile>src/main/filters/postgresql.properties</propertiesFile>
+					<!-- <properties>
+						<propertyname>val</propertyname>
+					</properties> -->
 				</configuration>
 				<executions>
 					<execution>
