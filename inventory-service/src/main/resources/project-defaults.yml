@@ -1,3 +1,5 @@
+project:
+ stage: local
 swarm:
   datasources:
     data-sources:
@@ -5,7 +7,7 @@ swarm:
         driver-name: postgres
         connection-url: jdbc:postgresql://localhost:5432/testdb
         user-name: jasingh
-        password: 12345689
+        password: 123456
     jdbc-drivers:
       postgres:
         driver-class-name: org.postgresql.Driver
