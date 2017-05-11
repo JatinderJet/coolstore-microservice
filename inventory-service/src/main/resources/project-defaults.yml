@@ -1,0 +1,13 @@
+swarm:
+  datasources:
+    data-sources:
+      InventoryDS:
+        driver-name: postgres
+        connection-url: jdbc:postgresql://localhost:5432/testdb
+        user-name: jasingh
+        password: 12345689
+    jdbc-drivers:
+      postgres:
+        driver-class-name: org.postgresql.Driver
+        xa-datasource-name: org.postgresql.xa.PGXADataSource 
+        driver-module-name: org.postgresql
