@@ -56,7 +56,8 @@ public class Main {
                 })
                 .dataSource(System.getProperty("db.datasource","InventoryDS"), (ds) -> {
                     ds.driverName(System.getProperty("db.drivername","org.postgresql"));
-                    ds.connectionUrl("jdbc:postgresql://localhost:5432/testdb");
+                    ds.connectionUrl("jdbc:postgresql://"+ System.getProperty("db.server","localhost")+":"
+                    		+System.getProperty("db.port","5433")+"/"+System.getProperty("db.name","mydb"));
                     ds.userName(System.getProperty("db.username","jasingh"));
                     ds.password(System.getProperty("db.password","123456"));
                 });
