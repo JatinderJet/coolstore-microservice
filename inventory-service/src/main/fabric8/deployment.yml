@@ -18,8 +18,7 @@ spec:
                    name: my-database-secret
                    key: password
             - name: JAVA_OPTIONS
-  #            value: "-Dswarm.datasources.data-sources.InventoryDS.connection-url=jdbc:postgresql://$(MY_DATABASE_SERVICE_HOST):$(MY_DATABASE_SERVICE_PORT)/testdb -Dswarm.datasources.data-sources.InventoryDS.user-name=$(DB_USERNAME) -Dswarm.datasources.data-sources.InventoryDS.password=$(DB_PASSWORD) -Dswarm.datasources.data-sources.InventoryDS.driver-name=postgresql"
-              value: "-Dswarm.datasources.data-sources.InventoryDS.connection-url=jdbc:postgresql://172.30.3.51:5432/testdb -Dswarm.datasources.data-sources.InventoryDS.user-name=$(DB_USERNAME) -Dswarm.datasources.data-sources.InventoryDS.password=$(DB_PASSWORD) -Dswarm.datasources.data-sources.InventoryDS.driver-name=postgresql"
+              value: "-Dswarm.datasources.data-sources.InventoryDS.connection-url=jdbc:postgresql://172.30.91.65:5432/inventory -Dswarm.datasources.data-sources.InventoryDS.user-name=$(DB_USERNAME) -Dswarm.datasources.data-sources.InventoryDS.password=$(DB_PASSWORD) -Dswarm.datasources.data-sources.InventoryDS.driver-name=postgresql"
           readinessProbe:
             httpGet:
               path: /

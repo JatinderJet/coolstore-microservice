@@ -20,23 +20,23 @@
 		
 		<jta-data-source>java:jboss/datasources/InventoryDS</jta-data-source>
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action"
+			<!-- <property name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />
 			<property name="javax.persistence.schema-generation.create-source"
 				value="metadata" />
 			<property name="javax.persistence.schema-generation.drop-source"
 				value="metadata" />
 			<property name="javax.persistence.sql-load-script-source"
-				value="import.sql" />
+				value="import.sql" /> -->
 			
 			<!-- The datasource is deployed as WEB-INF/hibernate5-quickstart-ds.xml, 
-			you can find it in the source at src/main/webapp/WEB-INF/hibernate5-quickstart-ds.xml -->	
-            <!-- Properties for Hibernate -->
-           <!--  <property name="
+			you can find it in the source at src/main/webapp/WEB-INF/hibernate5-quickstart-ds.xml	
+            Properties for Hibernate -->
+            <property name="
 				hibernate.hbm2ddl.auto " value="create-drop" />
-			<property name="hibernate.show_sql" value="true" /> -->
-			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" 
-				/> -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" 
+				/>
 		</properties>
 	</persistence-unit>
 </persistence>

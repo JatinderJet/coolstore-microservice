@@ -35,8 +35,8 @@ Below Approaches can be taken to transform to new tech stack
   - Create [fabric8](src/main) with files [credentials-secret.yml](src/main/fabric8/credentials-secret.yml), [deployment.yml](src/main/fabric8/deployment.yml), [route.yml](src/main/fabric8/route.yml), [svc.yml](src/main/fabric8/svc.ym).
   - On local use `oc` utility to create cluster `oc cluster up`
   - Create new-app for `postgresql` i.e `oc new-app -e POSTGRESQL_USER=jasingh -ePOSTGRESQL_PASSWORD=123456 -ePOSTGRESQL_DATABASE=testdb docker.io/centos/postgresql-95-centos7 --name=my-database`
-  - Build: as `root` run `mvn clean package fabric8:build`
-  - Deploy: `mvn fabric8:deploy`
+  - Build: as `root` run `mvn clean package fabric8:build -f pom-fabric8.xml`. In pom file the fault goals of `build` and `resource` are defined.
+  - Deploy: `mvn fabric8:deploy `
   - Run `oc get pods` , `oc get routes`.
 
 #### Observations
