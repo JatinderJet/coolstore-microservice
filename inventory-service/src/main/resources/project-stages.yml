@@ -1,0 +1,33 @@
+project:
+  stage: dev
+swarm:
+  datasources:
+    data-sources:
+      InventoryDS:
+        driver-name: postgres
+        connection-url: jdbc:postgresql://172.30.228.55:5432/inventory
+        user-name: jasingh
+        password: 123456
+    jdbc-drivers:
+      postgres:
+        driver-class-name: org.postgresql.Driver
+        xa-datasource-name: org.postgresql.xa.PGXADataSource 
+        driver-module-name: org.postgresql
+
+        
+---
+project:
+  stage: prod
+swarm:
+  datasources:
+    data-sources:
+      InventoryDS:
+        driver-name: postgres
+        connection-url: jdbc:postgresql://172.17.0.2:5432/inventory
+        user-name: jasingh
+        password: 123456
+    jdbc-drivers:
+      postgres:
+        driver-class-name: org.postgresql.Driver
+        xa-datasource-name: org.postgresql.xa.PGXADataSource 
+        driver-module-name: org.postgresql
